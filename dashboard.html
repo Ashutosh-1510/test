@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body onload="loadTickets(t => t.createdBy === getCurrentUser().email)">
+  <div class="dashboard">
+    <h2 style="text-align:center; color:#fff">Welcome to QuickDesk - User Dashboard</h2>
+    <div class="card">
+      <h3>Create New Ticket</h3>
+      <input id="subject" placeholder="Subject" />
+      <textarea id="desc" placeholder="Description"></textarea>
+      <select id="category">
+        <option>Technical</option>
+        <option>Billing</option>
+      </select>
+      <button onclick="createTicket()">Create Ticket</button>
+    </div>
+    <div style="margin-top:20px;">
+      <h3 style="color:#fff">Your Tickets</h3>
+      <div id="ticketList"></div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
